@@ -1,0 +1,37 @@
+{% extends "template.html" %}
+
+{% block pagetitle %}
+    File Explorer - Futuristic Technologies
+{% endblock %}
+
+{% block header %}
+    <p>Explore Server Files</p>
+{% endblock %}
+
+{% block content %}
+<section>
+    <h2>File Explorer</h2>
+
+    <ul style="list-style-type: none;">
+        {% if current_folder %}
+            <li>
+                <a href="{{ url_for('explore_folder', folder_path=current_folder)}}">&#8592; Back</a>
+            </li>
+        {% endif %}
+
+        {% for item in file_list %}
+            <li>
+                {% if item.is_file() %}
+                    <i class="fa-regular fa-file"></i>
+                {% elif item.is_dir() %}
+                    <i class="fa-regular fa-folder"></i>
+                {% endif %}
+                <a href="{% if item.is_dir() %}{{ url_for('explore_folder', folder_path=(folder_path or '') + '/' + item.name) }}
+                {% else %}{{ url_for('view_file', file_path=(folder_path or '') + '/' + item.name) }}{% endif %}">
+                    {{ item.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

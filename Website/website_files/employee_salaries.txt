@@ -1,0 +1,25 @@
+Employee Salaries
+
+Employee Name      |   Employee ID    |   Salary
+-------------------------------------------------
+John Smith         |   E1001           |   $60,000
+Alice Johnson      |   E1002           |   $75,000
+Michael Williams   |   E1003           |   $55,000
+Emily Davis        |   E1004           |   $80,000
+Daniel Brown       |   E1005           |   $65,000
+Olivia Martinez    |   E1006           |   $70,000
+Sophia Taylor      |   E1007           |   $62,000
+Christopher Lee    |   E1008           |   $78,000
+Emma Garcia        |   E1009           |   $68,000
+Matthew Rodriguez  |   E1010           |   $72,000
+Isabella Jackson   |   E1011           |   $85,000
+David White        |   E1012           |   $58,000
+Ava Harris         |   E1013           |   $67,000
+Ethan Turner       |   E1014           |   $76,000
+Sophie Clark       |   E1015           |   $63,000
+Andrew Hall        |   E1016           |   $71,000
+Grace Murphy       |   E1017           |   $59,000
+Liam Turner        |   E1018           |   $74,000
+Mia Thompson       |   E1019           |   $66,000
+Benjamin Allen     |   E1020           |   $79,000
+-------------------------------------------------

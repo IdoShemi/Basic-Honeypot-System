@@ -1,0 +1,12 @@
+
+You can enter the following commands:
+1. ls - watch the files in the directory.
+2. cat - open a file in terminal.
+3. pwd - current directory
+4. touch - create a file
+5. cd - change directory
+6. echo - update a file
+7. mkdir - create directory
+8. rm - remove file
+9. help - to watch the instructions.
+10. exit - to quit the ssh

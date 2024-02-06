@@ -1,0 +1,80 @@
+{% extends "template.html" %}
+
+{% block pagetitle %}
+    Anaylzed Reporting
+{% endblock %}
+
+{% block header %}
+    <p>Password Changed Successfully</p>
+    <style>
+    .img-wrapper {
+        max-width: 100%;
+        height: auto;
+    }
+    .img-wrapper img {
+        width: auto !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section style="max-width: 1200px;">
+    <div class="row">
+        {% for img_path in chart_paths %}
+            <div class="col-md-6">
+                <div class="img-wrapper">
+                    <img src="{{ url_for('static', filename=img_path) }}" class="img-fluid">
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <br><br>
+    <form action="" method="post">
+        <button type="submit" class="login-button button">Export to PDF</button>
+        <a href="/reportings" class="login-button button">Back</a>
+    </form>
+    <br><br><br>
+</section>
+
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+        var messages = {{ messages | safe }};
+        for (var i=0; i<messages.length; i++) {
+            alert(messages[i]);
+        }
+        </script>
+    {% endif %}
+{% endwith %}
+
+
+
+<script>
+    // Function to delete images when leaving the page
+    function deleteImagesOnUnload() {
+        fetch('/delete_images', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }        
+        }).then(() => {
+            console.log('Images deleted successfully');
+        }).catch(error => {
+            console.error('Error deleting images:', error);
+        });
+    }
+
+    // Event listener for beforeunload event
+    window.addEventListener('beforeunload', function(event) {
+        // Check if the form has been submitted
+        var formSubmitted = document.querySelector('form[action=""] button[type="submit"]:focus');
+        if (!formSubmitted) {
+            // If form has not been submitted, delete images before leaving
+            deleteImagesOnUnload();
+        }
+    });
+</script>
+{% endblock %}

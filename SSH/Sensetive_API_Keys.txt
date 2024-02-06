@@ -1,0 +1,15 @@
+Sensitive API Keys
+
+API Name            |   API Key
+-----------------------------------------------
+PaymentGateway API  |   sk_test_fakekey123
+SocialMedia API     |   api_fakekey456
+Cryptocurrency API  |   x-api-key_fake789
+WeatherService API  |   secret_key_weather123
+Authentication API  |   api_key_secureauth987
+MachineLearning API |   ml_secretkey_54321
+IoTPlatform API     |   iotapikey_abcdefg
+Geolocation API     |   geoloc_fakeapikey123
+Messaging API       |   messaging_securekey789
+Healthcare API      |   health_apikey_xyz123
+-----------------------------------------------

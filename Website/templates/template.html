@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Technologies</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 1em;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+    
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+    
+        .login-button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    
+        .login-button:hover {
+            background-color: #2980b9;
+        }
+    
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 1em;
+            text-align: left;
+        }
+
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+    
+    </style>
+    <script src="https://kit.fontawesome.com/8d8360a912.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        
+        {% if not session.get("user") %}
+            <a href="/login">Login</a>
+        {% else %}
+            <a href="/logout">Logout</a>
+            <span style="float: right; margin-right: 10px; color: #ecf0f1;">Hello, {{ session["user"] }}</span>
+        {% endif %}
+    </nav>
+    <header>
+        <h1>{% block pagetitle%}{% endblock %}</h1>
+        {% block header %}{% endblock %}
+    </header>
+    
+
+    
+    {% block content %}
+    {% endblock %}
+
+    
+
+
+    <footer>
+        <p>&copy; 2024 - Futuristic Technologies. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+

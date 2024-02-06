@@ -1,0 +1,29 @@
+{% extends "template.html" %}
+
+{% block pagetitle %}
+    Change Password - Futuristic Technologies
+{% endblock %}
+
+{% block header %}
+    <p>Change Your Password</p>
+{% endblock %}
+
+{% block content %}
+<section>
+    {% if not session.get("Token") %}
+        <p class="error-message">Invalid or expired token. Please try again.</p>
+        <a href="{{ url_for('forget_password_route') }}">Go back to Forgot Password</a>
+    {% else %}
+        <form method="post" action="{{ url_for('change_pass') }}">
+            <label for="password">New Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="password_verified">Verify Password:</label>
+            <input type="password" id="password_verified" name="password_verified" required>
+
+            <button class="change-password-button button" type="submit">Change Password</button>
+            <p class="error-message">{{ error_message }}</p>
+        </form>
+    {% endif %}
+</section>
+{% endblock %}

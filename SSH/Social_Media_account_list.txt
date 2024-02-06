@@ -1,0 +1,15 @@
+Fake Social Media Account List
+
+Username         |   Platform      |   Followers   |   Status
+-----------------------------------------------------------------
+@user123         |   Instagram     |   5,000       |   Active
+@fakeuser456     |   Twitter       |   3,500       |   Active
+@socialfaker789  |   Facebook      |   7,200       |   Active
+@instauser_fake  |   Instagram     |   8,500       |   Inactive
+@twitterfaker1   |   Twitter       |   1,200       |   Active
+@fakebook_user   |   Facebook      |   4,800       |   Inactive
+@fakesocial123   |   Instagram     |   6,700       |   Active
+@tweetfaker456   |   Twitter       |   2,300       |   Active
+@dummybookuser   |   Facebook      |   3,900       |   Inactive
+@user_of_fakes   |   Instagram     |   9,200       |   Active
+-----------------------------------------------------------------

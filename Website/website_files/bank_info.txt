@@ -1,0 +1,6 @@
+Username: alice_smith
+Email: alice.smith@future-genesis.com
+Password: GuvfVfNebg13Cnff!
+Full Name: Alice Smith
+Address: 456 Imaginary Lane, Dreamsville, DV
+Phone Number: +1 (555) 987-6543

@@ -1,0 +1,21 @@
+{% extends "template.html" %}
+
+{% block pagetitle %}
+    Verify Code - Futuristic Technologies
+{% endblock %}
+
+{% block header %}
+    <p>Verify Your Code</p>
+{% endblock %}
+
+{% block content %}
+<section>
+    <form method="post" action="{{ url_for('verify_code') }}">
+        <label for="token">Verification Code:</label>
+        <input type="text" id="token" name="token" required>
+
+        <button class="verify-code-button button" type="submit">Verify Code</button>
+        <p class="error-message">{{ error_message }}</p>
+    </form>
+</section>
+{% endblock %}
