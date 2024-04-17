@@ -22,7 +22,6 @@ import numpy as np
 from matplotlib import pyplot as plt
 import shutil
 
-
 logger = aws_logger("reporting_website_stream")
 app = Flask(__name__)
 app.secret_key = "stam_key"
@@ -434,5 +433,6 @@ def reporting_analyzed():
     return render_template('reporting_analyzed.html', chart_paths=chart_paths)
 
 
+
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", ssl_context=('cert.pem', 'key.pem'), port=5000)

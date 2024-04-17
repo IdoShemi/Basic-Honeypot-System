@@ -1,0 +1,10 @@
+psycopg2==2.9.9
+psycopg2-binary==2.9.9
+boto3
+reportlab
+Flask
+pandas
+xhtml2pdf
+matplotlib
+paramiko
+pyftpdlib

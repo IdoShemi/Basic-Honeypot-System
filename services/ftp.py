@@ -116,7 +116,21 @@ class MyFTPHandler(FTPHandler):
     def pre_process_command(self, line, cmd, arg):
         print(cmd)
         super().pre_process_command(line, cmd , arg)
+    
+    
+    def ftp_PORT(self, line):
+        # You could parse 'line' to extract the client's intended port and IP
+        # and then decide to accept it or do something else.
+        # Here's how you could log it or apply some logic:
+        parts = line.split(',')
+        ip = '.'.join(parts[:4])
+        port = (int(parts[4]) << 8) + int(parts[5])
+        print(f"Client requests active mode to {ip}:{port}")
+        # Here you could apply a condition to reject or modify the request
+        # This is just a print example, to actually block or change you'd need to handle it appropriately.
         
+        # To continue with normal processing if condition passes:
+        super().ftp_PORT(line)
   
     
 def count_files_in_folder(folder_path):
@@ -130,6 +144,8 @@ def insert_event(event: Event_Data):
     handler = Event_Handler()
     res = handler.insert_event(event)
     os.chdir(current_dir)
+    
+
 
 
 def is_protected_file(file_name: str):
@@ -150,12 +166,12 @@ authorizer = DummyAuthorizer()
 original_directory = os.getcwd()
 SSH_path = os.path.join(original_directory, 'FTP')
 
-authorizer.add_user("user", "1234", SSH_path, perm="elradfmw")
+authorizer.add_user("Donald", "Duck20", SSH_path, perm="elradfmw")
 
 handler = MyFTPHandler
 handler.authorizer = authorizer
-
-server = FTPServer(("127.0.0.1", 21), handler)
+handler.passive_ports = range(3000, 3100)
+server = FTPServer(("0.0.0.0", 50), handler)
 
 # Start the FTP server
 server.serve_forever()

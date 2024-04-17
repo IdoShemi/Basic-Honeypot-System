@@ -1,0 +1,23 @@
+# Use an official Python runtime as a parent image
+FROM python:3.11
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the shared classes directory into the container at /app/classes
+COPY ../classes /app/classes
+
+# Install any needed packages specified in classes/requirements.txt
+RUN pip install --no-cache-dir -r /app/classes/requirements.txt
+
+# Copy the website-specific files into the container at /app/website
+COPY . /app
+
+# Your application runs on port 8000, expose it to the Docker host
+EXPOSE 5000
+
+# Define environment variable
+ENV NAME World
+
+# Run app.py when the container launches
+CMD ["python", "/app/Reporting_Website/website.py"]

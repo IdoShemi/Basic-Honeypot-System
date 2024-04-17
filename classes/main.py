@@ -40,7 +40,7 @@ def Admin_Testing():
     print(res)
 
 def Events_Testing():
-    event = Event_Data(ip="127.0.0.1", location="Tel aviv", service="Test2", additional_data="Test")
+    event = Event_Data(ip="127.0.0.1", location="Holon", service="Test2", additional_data="Test")
     print("Test 1: inserting")
     handler = Event_Handler()
     res = handler.insert_event(event)
@@ -432,23 +432,26 @@ def check_user_validation_try_login():
     # We want to check: we need to check if it is working with mail and username, user is blocked, blocked time removed, connecting to user
     # trying to connect:
     # user mail
-    admin=Admin_Data("stamuser","strongpass123","stam@gmail.com")
+    admin=Admin_Data("Niv","nivniv123","nivade123@gmail.com")
     UserCreation.create_user_admin_table(admin)
-    res, errMessage = user_validation.User_Validation.TryLogin(service="admin", password="strongpass123", username="stamuser")
+    res, errMessage = user_validation.User_Validation.TryLogin(service="admin", password="nivniv123", username="Niv")
     print(res)
     print(errMessage)   
-    res, errMessage = user_validation.User_Validation.TryLogin(service="admin", password="nivniv1", username="stamuser")
+    res, errMessage = user_validation.User_Validation.TryLogin(service="admin", password="nivniv1", username="Niv")
     print(res)
     print(errMessage)    
-    res, errMessage = user_validation.User_Validation.TryLogin(service="admin", password="nivniv3", username="stamuser")
+    res, errMessage = user_validation.User_Validation.TryLogin(service="admin", password="nivniv3", username="Niv")
     print(res)
     print(errMessage)   
-    res, errMessage = user_validation.User_Validation.TryLogin(service="admin", password="ivniv123", username="stamuser")
+    res, errMessage = user_validation.User_Validation.TryLogin(service="admin", password="ivniv123", username="Niv")
     print(res)
     print(errMessage)   
-    res, errMessage = user_validation.User_Validation.TryLogin(service="admin", password="ivniv123", username="stamuser")
+    res, errMessage = user_validation.User_Validation.TryLogin(service="admin", password="ivniv123", username="Niv")
     print(res)
     print(errMessage)
+    user_validation.User_Validation.FogetPassword("shemiido@gmail.com","Ido","reporting")
+    mail_Handler=MailService()
+    mail_Handler.send_verify_mail(username_reporting="Ido")
     
     
     
@@ -461,5 +464,5 @@ def check_password():
     
     
 
-admin=UsersReportingData("Admin_Fusion","Admin123212!","stam@gmail.com")
+admin=UsersReportingData("Admin_Fusion","Admin123212!","nivade123@gmail.com")
 UserCreation.create_user_reporting_table(admin)

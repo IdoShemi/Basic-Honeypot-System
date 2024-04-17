@@ -127,4 +127,4 @@ def view_file(file_path):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", ssl_context=('cert.pem', 'key.pem'), port=30760)

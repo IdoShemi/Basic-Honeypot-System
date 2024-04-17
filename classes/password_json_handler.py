@@ -40,7 +40,6 @@ class PasswordJsonHandler:
         return self.passwords[0] == self.get_hashed_password(password)
 
     def get_hashed_password(self, password: str):
-        # Assuming this is your logic to retrieve salt
         if(self.service == "admin"): 
             salt = Salt_Handler().select_salt_by_username_and_service(username_admin=self.user)
         else:

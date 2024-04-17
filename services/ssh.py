@@ -186,7 +186,7 @@ class BasicSshHoneypot(paramiko.ServerInterface):
     def check_auth_password(self, username, password):
         log_message = f"Authentication attempt with username: {username}, password: {password} from {self.client_ip}"
         ret, error = logger.add_log(log_message)
-        if (username == "admin") and (password == "1234"):
+        if (username == "Walter") and (password == "White!"):
             return paramiko.AUTH_SUCCESSFUL
         return paramiko.AUTH_FAILED
 
